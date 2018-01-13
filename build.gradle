@@ -1,0 +1,33 @@
+plugins {
+	id "net.ltgt.apt" version "0.13"
+  }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: "net.ltgt.apt-eclipse"
+
+targetCompatibility='1.8'
+sourceCompatibility='1.8'
+
+repositories {
+    maven  {
+        url "http://repo1.maven.org/maven2"
+    }
+}
+  
+dependencies {
+	compileOnly "org.immutables:value:2.2.10:annotations"
+	apt         "org.immutables:value:2.2.10"
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.9.0'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.0'
+	compile 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.0'
+}
+
+eclipse {
+  jdt {
+    apt {
+      genSrcDir = file('apt_generated')
+    }
+  }
+}
