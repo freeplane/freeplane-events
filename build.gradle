@@ -5,6 +5,10 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: "net.ltgt.apt-eclipse"
+apply plugin: 'maven-publish'
+
+group 'org.freeplane.collaboration'
+version = '0.0.1-SNAPSHOT'
 
 targetCompatibility='1.8'
 sourceCompatibility='1.8'
@@ -30,4 +34,21 @@ eclipse {
       genSrcDir = file('apt_generated')
     }
   }
+}
+task sourceJar(type: Jar) {
+	from sourceSets.main.allJava
+	classifier "sources"
+  }
+  
+publishing {
+	publications {
+		freeplaneEvents(MavenPublication) {
+			from components.java
+			artifactId 'freeplane-events'
+			artifacts = [jar]
+			artifact sourceJar {
+				classifier "sources"
+			}
+		}
+	}
 }
