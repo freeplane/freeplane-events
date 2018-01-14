@@ -19,19 +19,12 @@
  */
 package org.freeplane.plugin.collaboration.client.event.children;
 
-import org.freeplane.features.map.NodeModel;
-
 /**
  * @author Dimitry Polivaev
  * Jan 5, 2018
  */
-public enum Side{
+public enum Side {
 	LEFT, RIGHT;
-
-	public static Side of(NodeModel child) {
-		return child.isLeft() ? LEFT : RIGHT;
-	}
-
 	public boolean isLeft() {
 		return this == Side.LEFT;
 	}
