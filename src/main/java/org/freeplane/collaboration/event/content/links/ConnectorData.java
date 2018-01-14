@@ -1,10 +1,8 @@
 package org.freeplane.collaboration.event.content.links;
 
-import java.awt.Point;
 import java.util.List;
 import java.util.Optional;
 
-import org.freeplane.collaboration.event.content.links.ImmutableConnectorData;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -14,6 +12,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(as = ImmutableConnectorData.class)
 @JsonDeserialize(as = ImmutableConnectorData.class)
 public interface ConnectorData {
+	public static enum Shape {
+		LINE, LINEAR_PATH, CUBIC_CURVE, EDGE_LIKE
+	};
+
+	public static enum ArrowType {
+		DEFAULT, NONE;
+	}
+
+	@Value.Immutable
+	@JsonSerialize(as = ImmutablePoint.class)
+	@JsonDeserialize(as = ImmutablePoint.class)
+	public interface Point {
+		public int x();
+
+		public int y();
+	}
+
 	String targetId();
 
 	int getAlpha();
@@ -24,7 +39,7 @@ public interface ConnectorData {
 
 	Optional<List<Integer>> getDash();
 
-	String getShape();
+	Shape getShape();
 
 	boolean getShowControlPointsFlag();
 
@@ -38,9 +53,9 @@ public interface ConnectorData {
 
 	int getLabelFontSize();
 
-	String getStartArrow();
+	ArrowType getStartArrow();
 
-	String getEndArrow();
+	ArrowType getEndArrow();
 
 	Point getStartInclination();
 
