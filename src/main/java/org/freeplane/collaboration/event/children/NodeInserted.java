@@ -1,6 +1,7 @@
-package org.freeplane.plugin.collaboration.client.event.children;
+package org.freeplane.collaboration.event.children;
 
-import org.freeplane.plugin.collaboration.client.event.NodeUpdated;
+import org.freeplane.collaboration.event.NodeUpdated;
+import org.freeplane.collaboration.event.children.ImmutableNodeInserted;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

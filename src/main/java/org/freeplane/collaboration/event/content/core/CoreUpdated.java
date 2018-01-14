@@ -1,6 +1,7 @@
-package org.freeplane.plugin.collaboration.client.event.content.core;
+package org.freeplane.collaboration.event.content.core;
 
-import org.freeplane.plugin.collaboration.client.event.NodeUpdated;
+import org.freeplane.collaboration.event.NodeUpdated;
+import org.freeplane.collaboration.event.content.core.ImmutableCoreUpdated;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

@@ -1,4 +1,4 @@
-package org.freeplane.plugin.collaboration.client.event;
+package org.freeplane.collaboration.event;
 
 public interface NodeUpdated extends MapUpdated {
 	String nodeId();

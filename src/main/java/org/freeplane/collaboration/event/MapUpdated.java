@@ -1,17 +1,17 @@
-package org.freeplane.plugin.collaboration.client.event;
+package org.freeplane.collaboration.event;
 
-import org.freeplane.plugin.collaboration.client.event.children.ImmutableNodeInserted;
-import org.freeplane.plugin.collaboration.client.event.children.ImmutableNodeMoved;
-import org.freeplane.plugin.collaboration.client.event.children.ImmutableNodeRemoved;
-import org.freeplane.plugin.collaboration.client.event.children.ImmutableRootNodeIdUpdated;
-import org.freeplane.plugin.collaboration.client.event.children.ImmutableSpecialNodeTypeSet;
-import org.freeplane.plugin.collaboration.client.event.content.core.ImmutableCoreUpdated;
-import org.freeplane.plugin.collaboration.client.event.content.links.ImmutableConnectorAdded;
-import org.freeplane.plugin.collaboration.client.event.content.links.ImmutableConnectorRemoved;
-import org.freeplane.plugin.collaboration.client.event.content.links.ImmutableConnectorUpdated;
-import org.freeplane.plugin.collaboration.client.event.content.links.ImmutableHyperlinkUpdated;
-import org.freeplane.plugin.collaboration.client.event.content.other.ImmutableMapContentUpdated;
-import org.freeplane.plugin.collaboration.client.event.content.other.ImmutableNodeContentUpdated;
+import org.freeplane.collaboration.event.children.ImmutableNodeInserted;
+import org.freeplane.collaboration.event.children.ImmutableNodeMoved;
+import org.freeplane.collaboration.event.children.ImmutableNodeRemoved;
+import org.freeplane.collaboration.event.children.ImmutableRootNodeIdUpdated;
+import org.freeplane.collaboration.event.children.ImmutableSpecialNodeTypeSet;
+import org.freeplane.collaboration.event.content.core.ImmutableCoreUpdated;
+import org.freeplane.collaboration.event.content.links.ImmutableConnectorAdded;
+import org.freeplane.collaboration.event.content.links.ImmutableConnectorRemoved;
+import org.freeplane.collaboration.event.content.links.ImmutableConnectorUpdated;
+import org.freeplane.collaboration.event.content.links.ImmutableHyperlinkUpdated;
+import org.freeplane.collaboration.event.content.other.ImmutableMapContentUpdated;
+import org.freeplane.collaboration.event.content.other.ImmutableNodeContentUpdated;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;

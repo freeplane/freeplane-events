@@ -1,8 +1,9 @@
-package org.freeplane.plugin.collaboration.client.event.batch;
+package org.freeplane.collaboration.event.batch;
 
 import java.util.List;
 
-import org.freeplane.plugin.collaboration.client.event.MapUpdated;
+import org.freeplane.collaboration.event.MapUpdated;
+import org.freeplane.collaboration.event.batch.ImmutableUpdateBlockCompleted;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

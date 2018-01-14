@@ -1,9 +1,10 @@
-package org.freeplane.plugin.collaboration.client.event.content.links;
+package org.freeplane.collaboration.event.content.links;
 
 import java.awt.Point;
 import java.util.List;
 import java.util.Optional;
 
+import org.freeplane.collaboration.event.content.links.ImmutableConnectorData;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

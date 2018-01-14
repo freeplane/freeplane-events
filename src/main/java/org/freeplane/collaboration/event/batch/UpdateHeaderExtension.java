@@ -1,4 +1,4 @@
-package org.freeplane.plugin.collaboration.client.event.batch;
+package org.freeplane.collaboration.event.batch;
 
 import org.immutables.value.Value;
 

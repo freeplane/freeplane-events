@@ -1,6 +1,6 @@
 /*
  *  Freeplane - mind map editor
- *  Copyright (C) 2018 dimitry
+ *  Copyright (C) 2017 dimitry
  *
  *  This file author is dimitry
  *
@@ -17,28 +17,12 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.freeplane.plugin.collaboration.client.event;
+package org.freeplane.collaboration.event.content.core;
 
-import java.util.Optional;
-
-import org.freeplane.plugin.collaboration.client.event.MapUpdated.ContentType;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
-public class GenericNodeUpdated {
-
-	private ObjectNode json;
-
-	public GenericNodeUpdated(ObjectNode json) {
-		this.json = json;
-	}
-	
-	public ContentType contentType() {
-		return ContentType.valueOf(json.get("contentType").asText());
-	}
-	
-	Optional<String> nodeId() {
-		return Optional.ofNullable(json.get("nodeId")).map(JsonNode::asText);
-	}
+/**
+ * @author Dimitry Polivaev
+ * Dec 4, 2017
+ */
+public enum CoreMediaType {
+	PLAIN_TEXT, HTML, LOCALIZED_TEXT, OBJECT
 }

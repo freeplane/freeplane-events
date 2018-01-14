@@ -1,6 +1,6 @@
 /*
  *  Freeplane - mind map editor
- *  Copyright (C) 2017 dimitry
+ *  Copyright (C) 2018 dimitry
  *
  *  This file author is dimitry
  *
@@ -17,12 +17,15 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.freeplane.plugin.collaboration.client.event.content.core;
+package org.freeplane.collaboration.event.children;
 
 /**
  * @author Dimitry Polivaev
- * Dec 4, 2017
+ * Jan 5, 2018
  */
-public enum CoreMediaType {
-	PLAIN_TEXT, HTML, LOCALIZED_TEXT, OBJECT
+public enum Side {
+	LEFT, RIGHT;
+	public boolean isLeft() {
+		return this == Side.LEFT;
+	}
 }

@@ -17,15 +17,30 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.freeplane.plugin.collaboration.client.event.children;
+package org.freeplane.collaboration.event.children;
+
+import java.util.Optional;
+
+import org.freeplane.collaboration.event.children.ImmutableNodePosition;
+import org.immutables.value.Value;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * @author Dimitry Polivaev
  * Jan 5, 2018
  */
-public enum Side {
-	LEFT, RIGHT;
-	public boolean isLeft() {
-		return this == Side.LEFT;
-	}
+@Value.Immutable
+@JsonSerialize(as = ImmutableNodePosition.class)
+@JsonDeserialize(as = ImmutableNodePosition.class)
+@JsonInclude(value=Include.NON_ABSENT)
+public
+interface NodePosition {
+	static public ImmutableNodePosition.Builder builder() { return ImmutableNodePosition.builder();}
+	String parentId();
+	int position();
+	Optional<Side> side();
 }

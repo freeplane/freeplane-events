@@ -17,29 +17,28 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.freeplane.plugin.collaboration.client.event.children;
+package org.freeplane.collaboration.event;
 
 import java.util.Optional;
 
-import org.immutables.value.Value;
+import org.freeplane.collaboration.event.MapUpdated.ContentType;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
-/**
- * @author Dimitry Polivaev
- * Jan 5, 2018
- */
-@Value.Immutable
-@JsonSerialize(as = ImmutableNodePosition.class)
-@JsonDeserialize(as = ImmutableNodePosition.class)
-@JsonInclude(value=Include.NON_ABSENT)
-public
-interface NodePosition {
-	static public ImmutableNodePosition.Builder builder() { return ImmutableNodePosition.builder();}
-	String parentId();
-	int position();
-	Optional<Side> side();
+public class GenericNodeUpdated {
+
+	private ObjectNode json;
+
+	public GenericNodeUpdated(ObjectNode json) {
+		this.json = json;
+	}
+	
+	public ContentType contentType() {
+		return ContentType.valueOf(json.get("contentType").asText());
+	}
+	
+	Optional<String> nodeId() {
+		return Optional.ofNullable(json.get("nodeId")).map(JsonNode::asText);
+	}
 }
