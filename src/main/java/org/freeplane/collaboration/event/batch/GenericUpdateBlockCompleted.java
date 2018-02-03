@@ -16,6 +16,7 @@ public interface  GenericUpdateBlockCompleted {
 	static ImmutableGenericUpdateBlockCompleted.Builder builder() {
 		return ImmutableGenericUpdateBlockCompleted.builder();
 	}
+	String userId();
 	String mapId();
 	long mapRevision();
 	List<ObjectNode> updateBlock();
