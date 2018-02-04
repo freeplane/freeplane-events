@@ -4,7 +4,7 @@ import org.immutables.value.Value;
 
 @Value.Modifiable
 public interface UpdateHeader {
-	String mapId();
+	MapId mapId();
 
 	long mapRevision();
 }

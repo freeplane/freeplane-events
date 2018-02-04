@@ -16,8 +16,8 @@ public interface  UpdateBlockCompleted {
 	static ImmutableUpdateBlockCompleted.Builder builder() {
 		return ImmutableUpdateBlockCompleted.builder();
 	}
-	String userId();
-	String mapId();
+	UserId userId();
+	MapId mapId();
 	long mapRevision();
 	List<MapUpdated> updateBlock();
 }
