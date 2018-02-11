@@ -1,6 +1,7 @@
 package org.freeplane.collaboration.event.batch;
 
 import org.immutables.value.Value.Immutable;
+import org.immutables.value.Value.Parameter;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -9,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(as = ImmutableMapUpdateRequest.class)
 @JsonDeserialize(as = ImmutableMapUpdateRequest.class)
 public interface MapUpdateRequest {
-	Credentials credentials();
-	UpdateBlockCompleted update();
+	@Parameter Credentials credentials();
+	@Parameter UpdateBlockCompleted update();
 }
 
