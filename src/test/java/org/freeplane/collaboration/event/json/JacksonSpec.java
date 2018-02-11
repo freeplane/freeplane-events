@@ -1,6 +1,7 @@
 package org.freeplane.collaboration.event.json;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.freeplane.collaboration.event.json.Jackson.objectMapper;
 
 import org.freeplane.collaboration.event.MapUpdated;
 import org.freeplane.collaboration.event.batch.GenericUpdateBlockCompleted;
@@ -13,18 +14,11 @@ import org.freeplane.collaboration.event.content.core.CoreUpdated;
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 
 public class JacksonSpec {
 	private static final ImmutableMapId MAP_ID = ImmutableMapId.of("mapId");
 
 	private static final UserId USER_ID = ImmutableUserId.of("userId");
-	
-	public static ObjectMapper objectMapper = new ObjectMapper(); 
-	static {
-		objectMapper.registerModule(new Jdk8Module());
-	}
 	
 	@Test
 	public void serializeAndDeserializeUpdateEvent() throws Exception
