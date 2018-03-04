@@ -42,7 +42,7 @@ eclipse {
   }
 }
 task sourceJar(type: Jar) {
-	from sourceSets.main.allJava, file('apt_generated')
+	from sourceSets.main.allJava, file('build/generated/source/apt/main')
 	classifier "sources"
   }
   
