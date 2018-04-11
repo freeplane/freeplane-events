@@ -43,7 +43,7 @@ eclipse {
 }
 task sourceJar(type: Jar) {
 	dependsOn compileJava
-	from sourceSets.main.allJava, compileJava.options.annotationProcessorGeneratedSourcesDirectory
+	from sourceSets.main.allJava, sourceSets.main.output.generatedSourcesDir
 	classifier "sources"
   }
   
