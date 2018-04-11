@@ -1,5 +1,6 @@
-package org.freeplane.collaboration.event.batch;
+package org.freeplane.collaboration.event.messages;
 
+import org.freeplane.collaboration.event.messages.ImmutableMapDescription;
 import org.immutables.value.Value.Immutable;
 import org.immutables.value.Value.Parameter;
 

@@ -1,8 +1,8 @@
-package org.freeplane.collaboration.event.batch;
+package org.freeplane.collaboration.event.messages;
 
 import java.util.List;
 
-import org.freeplane.collaboration.event.batch.ImmutableGenericUpdateBlockCompleted;
+import org.freeplane.collaboration.event.messages.ImmutableGenericUpdateBlockCompleted;
 import org.immutables.value.Value;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

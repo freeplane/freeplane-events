@@ -4,13 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.freeplane.collaboration.event.json.Jackson.objectMapper;
 
 import org.freeplane.collaboration.event.MapUpdated;
-import org.freeplane.collaboration.event.batch.GenericUpdateBlockCompleted;
-import org.freeplane.collaboration.event.batch.ImmutableMapId;
-import org.freeplane.collaboration.event.batch.ImmutableUserId;
-import org.freeplane.collaboration.event.batch.UpdateBlockCompleted;
-import org.freeplane.collaboration.event.batch.UserId;
+import org.freeplane.collaboration.event.messages.ImmutableMapId;
+import org.freeplane.collaboration.event.messages.ImmutableUserId;
 import org.freeplane.collaboration.event.content.core.CoreMediaType;
 import org.freeplane.collaboration.event.content.core.CoreUpdated;
+import org.freeplane.collaboration.event.messages.GenericUpdateBlockCompleted;
+import org.freeplane.collaboration.event.messages.UpdateBlockCompleted;
+import org.freeplane.collaboration.event.messages.UserId;
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.JsonNode;

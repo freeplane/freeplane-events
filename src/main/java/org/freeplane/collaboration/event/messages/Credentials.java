@@ -1,6 +1,7 @@
-package org.freeplane.collaboration.event.batch;
+package org.freeplane.collaboration.event.messages;
 
-import org.freeplane.collaboration.event.batch.UserId;
+import org.freeplane.collaboration.event.messages.ImmutableCredentials;
+import org.freeplane.collaboration.event.messages.UserId;
 import org.immutables.value.Value.Immutable;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

@@ -1,6 +1,7 @@
-package org.freeplane.collaboration.event.batch;
+package org.freeplane.collaboration.event.messages;
 
 import org.freeplane.collaboration.event.json.WrappingValueDeserializer;
+import org.freeplane.collaboration.event.messages.ImmutableMapId;
 import org.freeplane.collaboration.event.json.ValueWrapper;
 import org.freeplane.collaboration.event.json.ValueWrapperSerializer;
 import org.immutables.value.Value.Immutable;
@@ -11,15 +12,15 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Immutable
 @JsonSerialize(using=ValueWrapperSerializer.class)
-@JsonDeserialize(using=UserIdDeserializer.class)
-public interface UserId extends ValueWrapper<String>{
+@JsonDeserialize(using=MapIdDeserializer.class)
+public interface MapId extends ValueWrapper<String>{
 	@Parameter String value();
 }
 
 @SuppressWarnings("serial")
-class UserIdDeserializer extends WrappingValueDeserializer<String, UserId>{
-	public UserIdDeserializer() {
-		super(ImmutableUserId::of);
+class MapIdDeserializer extends WrappingValueDeserializer<String, MapId>{
+	public MapIdDeserializer() {
+		super(ImmutableMapId::of);
 	}
 }
 
