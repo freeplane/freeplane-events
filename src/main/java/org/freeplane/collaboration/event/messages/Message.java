@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 	@Type(value = ImmutableMapCreateRequested.class, name = "MapCreateRequested"),
 	@Type(value = ImmutableMapCreated.class, name = "MapCreated"),
 	@Type(value = ImmutableMapUpdateRequested.class, name = "MapUpdateRequested"),
-	@Type(value = ImmutableMapUpdateProcessed.class, name = "ImmutableMapUpdateProcessed"),
+	@Type(value = ImmutableMapUpdateProcessed.class, name = "MapUpdateProcessed"),
+	@Type(value = ImmutableMapUpdateDistributed.class, name = "MapUpdateDistributed"),
 	})
 public interface Message {
 	MessageId messageId();
