@@ -12,5 +12,5 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public interface MapUpdateDistributed extends ResponseEvent {
 	@Override @Default
 	default MessageId messageId() {return MessageId.random();}
-	UpdateBlockCompleted update();
+	GenericUpdateBlockCompleted update();
 }
