@@ -20,8 +20,8 @@ repositories {
 }
   
 dependencies {
-	compileOnly "org.immutables:value:2.2.10:annotations"
-	annotationProcessor "org.immutables:value:2.2.10"
+	compileOnly "org.immutables:value:2.6.1:annotations"
+	annotationProcessor "org.immutables:value:2.6.1"
 	compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0',
         	 'com.fasterxml.jackson.core:jackson-core:2.9.0',
         	 'com.fasterxml.jackson.core:jackson-annotations:2.9.0',
@@ -46,7 +46,6 @@ task sourceJar(type: Jar) {
 	from sourceSets.main.allJava, sourceSets.main.output.generatedSourcesDir
 	classifier "sources"
   }
-  
 publishing {
 	publications {
 		freeplaneEvents(MavenPublication) {
@@ -58,4 +57,7 @@ publishing {
 			}
 		}
 	}
+    repositories {
+        maven { url "${project.gradle.gradleUserHomeDir}/local-artifacts" }
+    }
 }
